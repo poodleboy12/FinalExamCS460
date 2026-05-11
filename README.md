@@ -36,7 +36,7 @@
 
 | Source Node Type | Why it is a source |
 |---------------|-------------------|
-| Actual source | _Because it is the soruce_ |
+| Actual source | _Because it is the source_ |
 | _Internal nodes_ | _They must eventually be reached and used as a source to continue_ |
 
 ### Part 2b: Distance Storage

@@ -8,7 +8,6 @@
 > sitting. Graders check that entries reflect genuine work across multiple sessions.
 > Delete all blockquotes before submitting.
 
----
 
 ## Entry 1 – [Date]: Initial Plan
 
@@ -23,12 +22,12 @@ each pair of nodes, the values will be a pair with the cost of the shortest path
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [May 11, 2026]: [Dijkstra's difficulty]
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
-_Your entry here._
+_When implementing the Dijkstra's algorithm, I followed the pseudocode from the wikipedia entry that used a priority queue. I imported Python's heapq module. Unfortunately, this module does not have a built in way to nicely decrease a node's priority. To solve this, I had ot implement this functionality manually, by searching through the nodes, inserting a new node with updated priority, and popping the old node. This takes linear time, but I suspect that for such a complex problem, it won't be a bottleneck._
 
 ---
 
