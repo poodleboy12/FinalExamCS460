@@ -141,7 +141,12 @@ def precompute_distances(graph, spawn, relics, exit_node):
     TODO
     """
     pass
-
+    answer = {}
+    nodes = select_sources(spawn, relics, exit_node)
+    for node in nodes:
+        answer[node] = run_dijkstra(graph, node)
+    
+    return answer
 
 # =============================================================================
 # PART 3
