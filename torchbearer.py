@@ -2,7 +2,7 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
+Student Name: ___Beigehon Talebzadeh________________________
 Student ID:   ___________________________
 
 INSTRUCTIONS
@@ -34,7 +34,16 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return '''**Why a single shortest-path run from S is not enough:**
+    _ The djisktra algorithm skips nodes so it wouldn't work in this situation because this problem needs to go through all nodes.
+  
+
+    - **What decision remains after all inter-location costs are known:**
+    _The order to traverse nodes in.
+
+    - **Why this requires a search over orders (one sentence):**
+    _Once all the shortest paths are suited then we order the shortest order must be computed._
+    '''
 
 
 # =============================================================================
