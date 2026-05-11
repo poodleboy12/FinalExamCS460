@@ -35,9 +35,9 @@
 > List the source node types as a bullet list. For each, one-line reason.
 
 | Source Node Type | Why it is a source |
-|---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+|---------------|-------------------|
+| Actual source | _Because it is the soruce_ |
+| _Internal nodes_ | _They must eventually be reached and used as a source to continue_ |
 
 ### Part 2b: Distance Storage
 
@@ -45,20 +45,21 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Python Dictionary (Hashmap) |
+| What the keys represent | Nodes |
+| What the values represent | distances to other nodes |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Because lookup requires computing a hashcode and array access, which are also O(1)|
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** _n, where n is the number of nodes_
+- **Cost per run:** _O(n^{2} logn)_
+- **Total complexity:** _O(n^{3} logn)_
+- **Justification (one line):** _Djikstras runtime on an adjacency list is O((E+V)logV), E is O(V^2), running Dijkstra's
+for each V gives the above complexity_
 
 ---
 
