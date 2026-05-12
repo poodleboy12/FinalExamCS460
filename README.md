@@ -107,17 +107,27 @@ _At each node, the shortest path can be taken so knowing the correct distance wi
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** _Does not give shortest path._
+- **Counter-example setup:** 
+_**Entrance:** S | **Relic chambers:** B, C, D | **Exit:** T
+
+| From \ To | B   | C   | D   | T   |
+|-----------|-----|-----|-----|-----|
+| S         | 1   | 2   | 2   | --  |
+| B         | --  | 100 | 10  | 1   |
+| C         | 1   | --  | 1 | 1   |
+| D         | 1   | 1   | --  | 100 |
+_
+- **What greedy picks:** _S->B->D->C->T Cost: 1+10+1+1=13._
+- **What optimal picks:** _S->C->D->B->T Cost: 2+1+1+1=5._
+- **Why greedy loses:** _It picks the local shortest path,
+- and assumes that there is not a shorter path using that node._
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- _The algorithm needs to find the order to explore all the nodes in the shortest way._
 
 ---
 
