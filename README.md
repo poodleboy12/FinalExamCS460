@@ -184,7 +184,6 @@ _
 - **Why it never overestimates:** _Your answer here._
 
 ### Part 6c: Pruning Correctness
-
 > One to two bullets. Explain why pruning is safe.
 
 - _Your answer here._
@@ -195,5 +194,11 @@ _
 
 > Bullet list. If none beyond lecture notes, write that.
 #shortest path from source to terminal visiting all nodes google search 
-#shortest path visiting all nodes leetcode and stackoverflow. wikipedia travels saleman problem
-- _Your references here._
+#shortest path visiting all nodes leetcode and stackoverflow. wikipedia travels salesman problem
+- _general problem research (the whole problem):
+https://en.wikipedia.org/wiki/Branch_and_bound 
+Google search AI: "shortest path directed weighted graph visiting all nodes with source and target
+https://en.wikipedia.org/wiki/Travelling_salesman_problem
+used in parts 2 and 3: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm 
+https://stackoverflow.com/questions/46636656/python-heapq-replace-priority
+"_
