@@ -259,7 +259,34 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    import itertools
+
+    current_loc = spawn
+    relics_collected = {spawn}
+    answer = [spawn]
+    fuel_cost = 0
+
+    best_ordering = ()
+    lowest_fuel_cost = float('inf')
+
+    all_orderings = itertools.permutations(relics)
+    for ordering in all_orderings:
+        current_loc = spawn
+        fuel_cost = 0
+        next_loc = ordering[0]
+        for node in ordering:
+            fuel_cost += dist_table[current_loc][node]
+            current_loc = node
+        fuel_cost += dist_table[current_loc][exit_node]
+
+        if fuel_cost < lowest_fuel_cost:
+            best_ordering = ordering
+            lowest_fuel_cost = fuel_cost
+        
+    return (lowest_fuel_cost, list(best_ordering))
+
+
+
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,

@@ -140,9 +140,9 @@ _
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location |  current_loc    | String | The node to be the source of the current search state |
+| Relics already collected | relics_collected | set | Visited nodes of the current search state  |
+| Fuel cost so far | fuel_cost | int  |  the cost of the current search state |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -150,18 +150,18 @@ _
 
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | set |
+| Operation: check if relic already collected | Time complexity: O(1) |
+| Operation: mark a relic as collected | Time complexity: O(1) |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1) |
+| Why this structure fits | For speed, a set is advantageous over a list. The final answer, requiring order, would be a list. |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** _O(k!)._
+- **Why:** _All possible orders must be searched. I haven't seen any optimizations yet._
 
 ---
 
@@ -194,5 +194,6 @@ _
 ## References
 
 > Bullet list. If none beyond lecture notes, write that.
-
+#shortest path from source to terminal visiting all nodes google search 
+#shortest path visiting all nodes leetcode and stackoverflow. wikipedia travels saleman problem
 - _Your references here._
