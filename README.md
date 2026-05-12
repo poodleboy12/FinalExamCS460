@@ -74,29 +74,29 @@ for each V gives the above complexity_
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  _We know the nodes have finished finding their tiniest distance from the source. This algorithm has shown us earlier that there is no cheaper path for them to show up in the future._
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  _The nodes have found their smallest distance from the source so far by using finalized nodes we have so far. We could possibly make the distances better in the future._
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  _Shortest path from source to source 0 and shortest undiscovered path are infinite._
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  _When a shorter non-negative path is found, the distance map gets updated._
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  _All nodes have been explored and compared against the shortest path._
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+_At each node, the shortest path can be taken so knowing the correct distance will get you the correct decision._
 
 ---
 
