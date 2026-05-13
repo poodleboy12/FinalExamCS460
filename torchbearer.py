@@ -69,7 +69,7 @@ def select_sources(spawn, relics, exit_node):
     answer.append(spawn)
     for relic in relics:
         answer.append(relic)
-    answer.append(exit_node)
+    #answer.append(exit_node)
     return answer
 
 
@@ -101,17 +101,18 @@ def run_dijkstra(graph, source):
     for node in nodes_list:
         if node != source:
             dist[node] = float('inf')
-            Q.append(node)
+            #Q.append(node)
             heapq.heappush(Q, (dist[node], node))
 
     while len(Q) > 0:
         u = heapq.heappop(Q)
-        for edge in graph[u]:
+        node = u[1]
+        for edge in graph[u[1]]:
             v = edge[0]
             cost = edge[1] 
-            alt = dist[u] + cost
+            alt = dist[u[1]] + cost
             if alt < dist[v]:
-                prev[v] = u
+                prev[v] = u[1]
                 dist[v] = alt
                 index = 0
                 for i in range(len(Q)):
@@ -122,6 +123,7 @@ def run_dijkstra(graph, source):
                 Q.insert(index, (alt, v))
                 Q.pop(index+1)
                 heapq.heapify(Q)
+    return dist   
             
 def precompute_distances(graph, spawn, relics, exit_node):
     """
@@ -147,6 +149,7 @@ def precompute_distances(graph, spawn, relics, exit_node):
         answer[node] = run_dijkstra(graph, node)
     
     return answer
+    
 
 # =============================================================================
 # PART 3
@@ -319,6 +322,10 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     This comment is graded.
     """
     pass
+    if current_loc == exit_node:
+        return None
+    for relic in relics_remaining:
+        pass
 
 
 # =============================================================================
@@ -342,7 +349,9 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    distance_table = precompute_distances(graph, spawn, relics, exit_node)
+    answer = find_optimal_route(distance_table, spawn, relics, exit_node)
+    return answer
 
 
 # =============================================================================
