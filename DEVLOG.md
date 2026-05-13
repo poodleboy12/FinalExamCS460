@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** __Beigehon Talebzadeh_________________________
+**Student ID:** _________824866530__________________
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -9,7 +9,7 @@
 > Delete all blockquotes before submitting.
 
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [May 11, 2026]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
@@ -31,33 +31,37 @@ _When implementing the Dijkstra's algorithm, I followed the pseudocode from the 
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [May 13, 2026]: [We fixed a couple of bugs in the code.]
 
-_Your entry here._
+_We fixed a couple of bugs in the code. We implemented the solve() method. We ran tests (all passing!).
+We went back and implemented a basic version of explore() with no heuristics. Then we completely re-implemented
+find_optimal_route to use explore() instead of manually iterating through all permutations. Then we implemented
+a simple heuristic in explore() to prune unnecessary paths._
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [May 13, 2026]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
 
-_Your entry here._
+_Think of a better heuristic that could prune more paths while still guaranteeing correctness. Add more tests for larger and
+more complex graphs._
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – [May 13, 2026]: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 1: Problem Analysis | 1 hour|
+| Part 2: Precomputation Design | 2 hours |
+| Part 3: Algorithm Correctness | 1.5 hours |
+| Part 4: Search Design | 1 hour |
+| Part 5: State and Search Space | 10 hours |
+| Part 6: Pruning | 10 hours |
+| Part 7: Implementation | 2 days |
+| README and DEVLOG writing | 2 days |
+| **Total** | 2 days, spent all day working on it.|

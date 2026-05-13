@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** ____Beigehon Talebzadeh_______________________
+**Student ID:** _____824866530______________________
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -24,7 +24,7 @@
   _The order to traverse nodes in.
 
 - **Why this requires a search over orders (one sentence):**
-  _Once all the shortest paths are suited then we order the shortest order must be computed._
+  _Once all the shortest paths are computed then the best traverse order must be computed._
 
 ---
 
@@ -37,7 +37,7 @@
 | Source Node Type | Why it is a source |
 |---------------|-------------------|
 | Actual source | _Because it is the source_ |
-| _Internal nodes_ | _They must eventually be reached and used as a source to continue_ |
+| _Internal nodes_ | _They must eventually be reached and used as a source to continue. They also add relics._ |
 
 ### Part 2b: Distance Storage
 
@@ -84,13 +84,13 @@ for each V gives the above complexity_
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Shortest path from source to source 0 and shortest undiscovered path are infinite._
+  _Shortest path from source to source is 0, and shortest path from source to any other node is infinite._
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
   _When a shorter non-negative path is found, the distance map gets updated._
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _All nodes have been explored and compared against the shortest path._
+  _dist[v] will be the length of the shortest path from source to v, for all v in the graph._
 
 ### Part 3c: Why This Matters for the Route Planner
 
@@ -120,7 +120,7 @@ _**Entrance:** S | **Relic chambers:** B, C, D | **Exit:** T
 _
 - **What greedy picks:** _S->B->D->C->T Cost: 1+10+1+1=13._
 - **What optimal picks:** _S->C->D->B->T Cost: 2+1+1+1=5._
-- **Why greedy loses:** _It picks the local shortest path,
+- **Why greedy loses:** _It picks the shortest edge, at each point.
 - and assumes that there is not a shorter path using that node._
 
 ### What the Algorithm Must Explore
@@ -141,8 +141,8 @@ _
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
 | Current location |  current_loc    | String | The node to be the source of the current search state |
-| Relics already collected | relics_collected | set | Visited nodes of the current search state  |
-| Fuel cost so far | fuel_cost | int  |  the cost of the current search state |
+| Relics remaining | relics_remaining| set | Unvisited nodes of the current search state  |
+| Fuel cost so far | cost_so_far | int  |  the cost of the current search state |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -161,7 +161,7 @@ _
 > Two bullets.
 
 - **Worst-case number of orders considered:** _O(k!)._
-- **Why:** _All possible orders must be searched. I haven't seen any optimizations yet._
+- **Why:** _All possible orders must be searched. I haven't made any optimizations yet._
 
 ---
 
@@ -171,34 +171,37 @@ _
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** _We're tracking the (bestCost, visitedorder)._
+- **When it is used:** _We use it for pruning and to update the bestCost when we find a better solution._
+- **What it allows the algorithm to skip:** _It allows us to skip paths that guaranteed not to find a better solution._
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** _The arguments to explore like the current location, relic remaining, and cost so far._
+- **What the lower bound accounts for:** _The cost so far._
+- **Why it never overestimates:** _Because the final cost must be greater than the cost so far._
 
 ### Part 6c: Pruning Correctness
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- _The pruning is safe because it only gives up when the cost so far is greater than the best solution so far, the cost can only increase so this path can never be the best solution._
 
 ---
 
 ## References
 
 > Bullet list. If none beyond lecture notes, write that.
-#shortest path from source to terminal visiting all nodes google search 
-#shortest path visiting all nodes leetcode and stackoverflow. wikipedia travels salesman problem
+
 - _general problem research (the whole problem):
+Shortest path from source to terminal visiting all nodes, google search AI. (Just for reference).
+https://leetcode.com/problems/shortest-path-visiting-all-nodes/
+https://stackoverflow.com/questions/33583392/shortest-path-to-visit-all-nodes
 https://en.wikipedia.org/wiki/Branch_and_bound 
-Google search AI: "shortest path directed weighted graph visiting all nodes with source and target
+Google search AI: "shortest path directed weighted graph visiting all nodes with source and target" (Just for reference)
 https://en.wikipedia.org/wiki/Travelling_salesman_problem
+
 used in parts 2 and 3: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm 
 https://stackoverflow.com/questions/46636656/python-heapq-replace-priority
 "_
