@@ -160,7 +160,8 @@ def dijkstra_invariant_check():
         Must match what you wrote in README Part 3.
 
     """
-    return """### Part 3a: What the Invariant Means
+    return """
+### Part 3a: What the Invariant Means
 
 > Two bullets: one for finalized nodes, one for non-finalized nodes.
 > Do not copy the invariant text from the spec.
@@ -176,13 +177,13 @@ def dijkstra_invariant_check():
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Shortest path from source to source 0 and shortest undiscovered path are infinite._
+  _Shortest path from source to source is 0, and shortest path from source to any other node is infinite._
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
   _When a shorter non-negative path is found, the distance map gets updated._
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _All nodes have been explored and compared against the shortest path._
+  _dist[v] will be the length of the shortest path from source to v, for all v in the graph._
 
 ### Part 3c: Why This Matters for the Route Planner
 
@@ -222,7 +223,7 @@ _**Entrance:** S | **Relic chambers:** B, C, D | **Exit:** T
 _
 - **What greedy picks:** _S->B->D->C->T Cost: 1+10+1+1=13._
 - **What optimal picks:** _S->C->D->B->T Cost: 2+1+1+1=5._
-- **Why greedy loses:** _It picks the local shortest path,
+- **Why greedy loses:** _It picks the shortest edge, at each point.
 - and assumes that there is not a shorter path using that node._
 
 ### What the Algorithm Must Explore
